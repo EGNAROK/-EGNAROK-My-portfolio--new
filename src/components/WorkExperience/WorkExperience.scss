@@ -16,6 +16,10 @@ $work-experience-text-primary-color: var(--text-primary);
     width: 100%;
   }
 
+  @include r.responsive-multiple(phone, phone-large) {
+    padding: 15px;
+  }
+
   &__list {
     & > :nth-child(2) .work-experience__image {
       background-color: $work-experience-background-static-white-color;
@@ -38,6 +42,11 @@ $work-experience-text-primary-color: var(--text-primary);
     margin-right: 12px;
     background-color: $work-experience-background-static-white-color;
     border-radius: 50px;
+
+    @include r.responsive-multiple(phone, phone-large) {
+    width: 50px;
+    height: 50px;
+  }
   }
 
   &__image {

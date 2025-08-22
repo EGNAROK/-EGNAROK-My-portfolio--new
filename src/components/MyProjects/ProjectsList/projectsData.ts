@@ -21,7 +21,7 @@ export const projectsData: Project[] = [
     title: 'projects.project4.title',
     description: 'projects.project4.description',
     image: projects.pokedex,
-    link: 'https://egnarok.github.io/pokedex/',
+    link: 'https://pokedex-one-blue-57.vercel.app/',
   },
   {
     id: 3,

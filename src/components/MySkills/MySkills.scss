@@ -79,9 +79,9 @@ $my-skills-text-primary-color: var(--text-primary);
         font-size: f.$font-size-3xs;
       }
       @include r.responsive(phone) {
-        width: 70px;
-        height: 70px;
-        font-size: f.$font-size-3xs;
+        width: 90px;
+        height: 90px;
+        font-size: f.$font-size-2xs;
       }
     }
   }

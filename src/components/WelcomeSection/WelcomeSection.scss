@@ -24,6 +24,10 @@ $welcome-component-border-default-color: var(--border-default);
 
   &__text-block {
     @include r.responsive-multiple(phone, phone-large) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 160px;
       text-align: center;
     }
   }
