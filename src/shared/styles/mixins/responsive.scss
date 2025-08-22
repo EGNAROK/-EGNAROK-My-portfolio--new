@@ -10,7 +10,7 @@ $breakpoints: (
 );
 
 @mixin responsive($media) {
-  @if map-has-key($breakpoints, $media) {
+  @if map.has-key($breakpoints, $media) {
     $value: map.get($breakpoints, $media);
 
     @if $media == phone {
