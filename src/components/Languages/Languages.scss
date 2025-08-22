@@ -1,0 +1,92 @@
+@use "../../shared/styles/mixins/responsive.scss" as r;
+
+$language-list-background-surface-color: var(--background-surface);
+$language-list-background-accent-color: var(--background-accent);
+$language-list-text-secondary-color: var(--text-secondary);
+$language-list-border-accent-color: var(--border-accent);
+
+.languages {
+  &__list-wrapper {
+    width: 35%;
+
+    @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    padding: 25px;
+    background-color: $language-list-background-surface-color;
+    border-radius: 16px;
+  }
+
+  &__item {
+    margin-top: 40px;
+
+    &:nth-child(2) .languages__bar {
+      width: 100%;
+    }
+
+    &:nth-child(3) .languages__bar {
+      width: 90%;
+    }
+
+    &:nth-child(4) .languages__bar {
+      width: 30%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 32px;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__bar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100px;
+    height: 42px;
+    padding: 0;
+    background-color: transparent;
+    border: 2px solid $language-list-border-accent-color;
+    border-radius: 50px;
+    color: $language-list-text-secondary-color;
+    text-transform: capitalize;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: $language-list-background-accent-color;
+      z-index: 0;
+      transition: left 0.4s ease;
+    }
+
+    &:hover {
+      &::before {
+        left: 0;
+      }
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

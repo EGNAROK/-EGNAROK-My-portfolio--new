@@ -1,0 +1,89 @@
+@use "../../styles/mixins/responsive.scss" as r;
+
+$theme-switcher-circle-text-staticColors-black-color: var(
+  --staticColors-blackColor
+);
+$theme-switcher-slider-background-base-color: var(--background-base);
+$theme-switcher-circle-background-highlight-color: var(--background-highlight);
+$theme-switcher-box-shadow-base-color: var(--shadows-base);
+
+.theme-switcher {
+  &__input {
+    display: none;
+  }
+
+  &__slider {
+    width: 80px;
+    height: 20px;
+    background: $theme-switcher-slider-background-base-color;
+    box-shadow: 0 0 3px 1px $theme-switcher-box-shadow-base-color;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+
+    @include r.responsive-multiple(tablet, tablet-large) {
+      width: 60px;
+    }
+
+    @include r.responsive-multiple(phone, phone-large) {
+      width: 60px;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: $theme-switcher-circle-background-highlight-color;
+    box-shadow: 0 0 7px 1px $theme-switcher-box-shadow-base-color;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    transition: left 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include r.responsive-multiple(tablet, tablet-large) {
+      width: 30px;
+      height: 30px;
+      top: -5px;
+    }
+
+    @include r.responsive-multiple(phone, phone-large) {
+      width: 28px;
+      height: 28px;
+      top: -4px;
+    }
+
+    &--animated {
+      animation: rotate 12s linear infinite;
+    }
+  }
+
+  &__input:checked + &__slider &__circle {
+    left: calc(100% - 30px);
+
+    @include r.responsive-multiple(tablet, tablet-large) {
+      left: calc(100% - 28px);
+    }
+
+    @include r.responsive-multiple(phone, phone-large) {
+      left: calc(100% - 25px);
+    }
+  }
+
+  &__icon {
+    color: $theme-switcher-circle-text-staticColors-black-color;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

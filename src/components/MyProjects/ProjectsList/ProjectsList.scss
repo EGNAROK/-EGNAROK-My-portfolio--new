@@ -1,0 +1,167 @@
+@use "../../../shared/styles/variables/fonts.scss" as f;
+@use "../../../shared/styles/mixins/typography.scss" as t;
+@use "../../../shared/styles/mixins/responsive.scss" as r;
+
+$projects-list-background-surface-color: var(--background-surface);
+$projects-list-background-base-color: var(--background-base);
+$projects-list-text-primary-color: var(--text-primary);
+$projects-list-text-accent-color: var(--text-accent);
+
+.projects-list {
+  position: relative;
+  z-index: 90;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 65px;
+  margin-top: 40px;
+
+  &__item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 25px;
+    margin: 25px 0 60px;
+    border-radius: 16px;
+    color: $projects-list-text-primary-color;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+
+    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+      flex-direction: column;
+      padding: 0;
+    }
+
+    @include r.responsive-multiple (phone, phone-large) {
+      margin: 15px 0 30px;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    gap: 25px;
+    border-radius: 8px;
+
+    @include r.responsive(desktop-large) {
+      width: 400px;
+    }
+    @include r.responsive(desktop) {
+      width: 400px;
+    }
+    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    border-radius: 6px;
+  }
+
+  &__description {
+    height: 100%;
+    border-radius: 6px;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 540px;
+    height: 260px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: auto;
+    background-color: $projects-list-background-surface-color;
+    border-radius: 16px;
+
+    @include r.responsive(desktop) {
+      width: 420px;
+      height: 220px;
+    }
+
+    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+      width: 100%;
+      height: 260px;
+      margin-top: 32px;
+    }
+
+    @include r.responsive (phone-large) {
+      height: 200px;
+    }
+    @include r.responsive (phone) {
+      height: auto;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 90%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 16px 18px 18px 16px;
+    background-color: $projects-list-background-base-color;
+
+    @include r.responsive (phone) {
+      width: 85%;
+    }
+  }
+
+  &__link-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 16px 16px 0;
+    background-color: $projects-list-background-surface-color;
+    transition: all 0.3s ease;
+
+    @include r.responsive (phone) {
+      width: 15%;
+    }
+
+    &:hover {
+      width: 100%;
+      opacity: 0.97;
+      border-radius: 16px;
+    }
+
+    &:hover .projects-list__link {
+      @include t.font-setup(
+        f.$font-family-secondary,
+        f.$font-weight-extra-bold,
+        f.$font-size-lg
+      );
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: $projects-list-text-primary-color;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+
+    @include t.font-setup(
+      f.$font-family-secondary,
+      f.$font-weight-bold,
+      f.$font-size-3xs
+    );
+
+    &:hover {
+      color: $projects-list-text-accent-color;
+    }
+  }
+}

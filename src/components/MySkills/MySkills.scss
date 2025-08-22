@@ -1,0 +1,131 @@
+@use "../../shared/styles/variables/fonts.scss" as f;
+@use "../../shared/styles/mixins/typography.scss" as t;
+@use "../../shared/styles/mixins/responsive.scss" as r;
+
+$my-skills-background-surface-color: var(--background-surface);
+$my-skills-text-primary-color: var(--text-primary);
+
+.my-skills {
+  padding: 120px 0;
+
+  &__content {
+    padding: 0 25px;
+
+    @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
+      padding: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 35px;
+    margin-top: 40px;
+
+    @include r.responsive(desktop-large) {
+      gap: 30px;
+    }
+    @include r.responsive(desktop) {
+      gap: 15px;
+    }
+
+    @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
+      justify-content: center;
+      gap: 10px;
+    }
+
+    &-item {
+      @include t.font-setup(
+        f.$font-family-secondary,
+        f.$font-weight-bold,
+        f.$font-size-sm
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 130px;
+      height: 130px;
+      margin: 0;
+      padding: 15px 15px;
+      color: $my-skills-text-primary-color;
+      background-color: $my-skills-background-surface-color;
+      border-radius: 16px;
+
+      @include r.responsive(desktop-large) {
+        width: 120px;
+        height: 120px;
+        font-size: f.$font-size-2xs;
+      }
+      @include r.responsive(desktop) {
+        width: 108px;
+        height: 108px;
+        font-size: f.$font-size-2xs;
+      }
+      @include r.responsive(tablet-large) {
+        width: 100px;
+        height: 100px;
+        font-size: f.$font-size-2xs;
+      }
+      @include r.responsive(tablet) {
+        width: 110px;
+        height: 110px;
+        font-size: f.$font-size-2xs;
+      }
+      @include r.responsive(phone-large) {
+        width: 80px;
+        height: 80px;
+        font-size: f.$font-size-3xs;
+      }
+      @include r.responsive(phone) {
+        width: 70px;
+        height: 70px;
+        font-size: f.$font-size-3xs;
+      }
+    }
+  }
+
+  &__other {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    gap: 35px;
+
+    @include r.responsive-multiple(
+      phone,
+      phone-large,
+      tablet,
+      tablet-large,
+      desktop
+    ) {
+      margin-top: 15px;
+      gap: 15px;
+    }
+
+    @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
+      flex-direction: column;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    gap: 35px;
+
+    @include r.responsive-multiple(
+      phone,
+      phone-large,
+      tablet,
+      tablet-large,
+      desktop
+    ) {
+      gap: 15px;
+    }
+
+    @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+$iconBackgroundPrimaryColor: var(--background-highlightSecondary);
+$iconBackgroundSecondaryColor: var(--background-featuresPageIcons);
+$iconBackgroundSurfaceColor: var(--background-iconHighlightPrimary);
+$iconBackgroundAccentColor: var(--background-iconHighlightSecondary);
+
+.app-icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--circle {
+    border-radius: 50%;
+  }
+
+  &--square {
+    border-radius: 20px;
+  }
+
+  &.bg-primary {
+    color: $iconBackgroundPrimaryColor;
+  }
+
+  &.bg-secondary {
+    color: $iconBackgroundSecondaryColor;
+  }
+
+  &.bg-surface {
+    color: $iconBackgroundSurfaceColor;
+  }
+
+  &.bg-accent {
+    color: $iconBackgroundAccentColor;
+  }
+}

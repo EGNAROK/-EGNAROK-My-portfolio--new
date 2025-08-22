@@ -1,0 +1,21 @@
+@use "../../shared/styles/variables/fonts.scss" as f;
+@use "../../shared/styles/mixins/typography.scss" as t;
+
+$contact-text-secondary-color: var(--text-secondary);
+
+.contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  z-index: 10;
+
+  &__email {
+    @include t.font-setup(
+      f.$font-family-primary,
+      f.$font-weight-medium,
+      f.$font-size-2xs
+    );
+    color: $contact-text-secondary-color;
+  }
+}

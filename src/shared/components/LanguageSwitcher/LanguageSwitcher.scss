@@ -1,0 +1,74 @@
+@use "../../styles/variables/fonts.scss" as f;
+@use "../../styles/mixins/typography.scss" as t;
+@use "../../styles/mixins/responsive.scss" as r;
+
+$language-switcher-background-base-color: var(--background-base);
+$language-switcher-background-surface-color: var(--background-surface);
+$language-switcher-box-shadow-base-color: var(--shadows-base);
+$language-switcher-text-accent-color: var(--text-accent);
+$language-switcher-text-primary-color: var(--text-primary);
+
+.language-switcher {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 6px 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &--active &__current {
+    transform: scale(1.1);
+  }
+
+  &__current {
+    @include t.font-setup(f.$font-family-secondary, f.$font-weight-bold, f.$font-size-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 3px 1px $language-switcher-box-shadow-base-color;
+    border-radius: 50px;
+    background-color: $language-switcher-background-base-color;
+    color: $language-switcher-text-primary-color;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+    @include r.responsive-multiple (phone, phone-large) {
+      width: 35px;
+      height: 35px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 125%;
+    right: 0px;
+    background-color: $language-switcher-background-surface-color;
+    box-shadow: inset 0 0 3px 1px $language-switcher-box-shadow-base-color;
+    border-radius: 16px;
+  }
+
+  &__option {
+    color: $language-switcher-text-primary-color;
+    text-shadow: 0 1px 1px $language-switcher-box-shadow-base-color;
+
+    &::after {
+      width: 0;
+    }
+
+    &:hover {
+      color: $language-switcher-text-accent-color;
+    }
+
+    &--active {
+      color: $language-switcher-text-accent-color;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@use '../../shared/styles/mixins/responsive.scss' as r;
+
+$about-me-border-default-color: var(--border-default);
+
+.about-me {
+  padding: 120px 0;
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+
+    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    margin-top: 40px;
+    gap: 65px;
+
+    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+      width: 100%;
+    }
+  }
+
+  &__text-block {
+    width: 400px;
+    white-space: pre-line;
+
+    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+      width: 100%;
+    }
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 440px;
+    height: 240px;
+    border: 2px solid $about-me-border-default-color;
+    // border-radius: 70% 30% 49% 51% / 31% 46% 54% 69% ;
+    border-radius: 16px;
+    background-color: rgb(217, 217, 217);
+    overflow: hidden;
+
+    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+      margin: 32px auto 0;
+    }
+
+    @include r.responsive-multiple (phone, phone-large) {
+      width: 100%;
+      height: 260px;
+    }
+
+    @include r.responsive (phone) {
+      height: 220px;
+    }
+  }
+
+  &__image-wrapper {
+    width: 220px;
+    margin-top: 110px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

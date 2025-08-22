@@ -1,0 +1,57 @@
+@use "../../shared/styles/variables/fonts.scss" as f;
+@use "../../shared/styles/mixins/typography.scss" as t;
+@use "../../shared/styles/mixins/responsive.scss" as r;
+
+$button-text-muted-color: var(--text-muted);
+$button-text-primary-color: var(--text-primary);
+
+.navigation {
+    width: 100%;
+    gap: 35px;
+
+
+    &__button {
+        color: $button-text-muted-color;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        padding: 8px 0;
+
+        &:hover {
+            color: $button-text-primary-color;
+
+            .navigation__icon {
+                color: $button-text-primary-color;
+            }
+        }
+
+        &-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+             @include r.responsive (tablet-large) {
+            gap: 5px;
+        }
+        }
+
+        &-text {
+            opacity: 1;
+            max-width: 150px;
+            transform: translateX(0);
+            transition: opacity 0.3s ease, max-width 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+            white-space: nowrap;
+
+            &--collapsed {
+                opacity: 0;
+                max-width: 0;
+                transform: translateX(-10px);
+            }
+        }
+    }
+
+    &__icon {
+        color: $button-text-muted-color;
+        transition: all 0.3s ease;
+    }
+}

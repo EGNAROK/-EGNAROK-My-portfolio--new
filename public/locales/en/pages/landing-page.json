@@ -1,0 +1,85 @@
+{
+    "header": {
+        "settings": "settings",
+        "home": "Home"
+    },
+    "navigation": {
+        "about": "About me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "welcomeSection": {
+        "preTitle": "Hi, I'm",
+        "title": "Serhii Machkovskiy",
+        "description": "Front-end Developer",
+        "download_cv": "Download CV"
+    },
+    "about": {
+        "title": "About me",
+        "description": "I'm a front-end developer passionate about turning ideas into digital experiences. I enjoy building clean, responsive interfaces that are both functional and visually appealing.\n\nCurious by nature, I love exploring modern design trends and web technologies. My goal is to write code that’s clean, scalable, and user-friendly."
+    },
+    "skills": {
+        "title": "My Skills",
+        "languages": "Languages",
+        "languagesList": [
+            {
+                "title": "Ukrainian",
+                "level": "native"
+            },
+            {
+                "title": "Russian",
+                "level": "fluent"
+            },
+            {
+                "title": "English",
+                "level": "beginner"
+            }
+        ],
+        "education": "Education",
+        "vdpu": {
+            "title": "Vinnytsia State Pedagogical University",
+            "imgAlt": "Logo of Vinnytsia State Pedagogical University"
+        },
+        "itStep": {
+            "title": "IT Step Academy",
+            "imgAlt": "Logo of IT Step Academy"
+        },
+        "workExperience": "Work Experience",
+        "Sonik": {
+            "title": "Sonik Technology",
+            "imgAlt": "Logo of Sonik Technology company",
+            "july": "July",
+            "august": "August"
+        },
+        "selfEmployed": {
+            "title": "Self Employed",
+            "imgAlt": "Icon briefcase",
+            "september": "September",
+            "may": "May"
+        }
+    },
+    "projects": {
+        "title": "My Projects",
+        "project1": {
+            "title": "Workout",
+            "description": "This project was developed as part of my midterm assessment at IT Step Academy. It was built using HTML, CSS, and vanilla JavaScript, with the layout based on a Figma design.\n\nThe goal was to recreate the visual structure accurately while applying front-end skills like DOM manipulation, Flexbox styling, and JavaScript interactivity.\n\nThis work improved my understanding of semantic HTML, clean CSS architecture, and turning design prototypes into responsive web pages."
+        },
+        "project2": {
+            "title": "Food tuck",
+            "description": "This project was developed as my graduation work at IT Step Academy. It was built using React, following a design created in Figma.\n\nThe goal was to implement a modern, responsive web application while applying React fundamentals, component-based architecture, and state management.\n\nWorking on this project enhanced my skills in React development and translating design prototypes into functional user interfaces."
+        },
+        "project3": {
+            "title": "Language Space",
+            "description": "This educational project was developed in collaboration with another developer using HTML, CSS, and JavaScript. The goal was to practice teamwork and deepen knowledge in using Git.\n\nMy responsibilities included creating and styling the main sections of the page: the header, the main screen, the \"About Us\" block, and sections for learning Spanish and English. To improve modularity and code organization, I used Handlebars (HBS) templates.\n\nThis experience helped me enhance my skills in collaborative development, version control with Git, and working with templating engines like Handlebars.\n\nRecently, I re-uploaded the project to GitHub to fix image display issues. The code itself was not changed, so my current progress can be compared with the previous version."
+        },
+        "project4": {
+            "title": "Pokedex",
+            "description": "This project was built as part of a tutorial course on Next.js. It is a small application designed to introduce the basics of working with the framework.\n\nThe app fetches data from the public PokeAPI and includes a simple search filter to browse through Pokémon entries.\n\nThe project helped me get familiar with key concepts of Next.js such as page-based routing, API integration, and basic client-side interactivity."
+        },
+        "project5": {
+            "title": "To-Do List",
+            "description": "This is my new small project created to practice working with React, React hooks, and props. The app allows users to add, complete, and delete tasks in a simple and intuitive interface. For handling sound effects on user actions, I used the `use-sound` library. The design is custom-made by me, featuring a warm, watercolor-inspired style that adds a gentle and friendly feel. This project helped me improve my skills in React state management, component composition, and working with third-party libraries."
+        }
+    }
+}

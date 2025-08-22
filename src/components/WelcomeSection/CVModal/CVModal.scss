@@ -1,0 +1,71 @@
+$cv-modal-background-base-color: var(--background-base);
+$cv-modal-background-surface-color: var(--background-surface);
+$cv-modal-border-default-color: var(--border-default);
+$cv-modal-box-shadow-base-color: var(--shadows-base);
+
+.cv-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-top: 8px;
+  border-top: 1px solid $cv-modal-border-default-color;
+
+  &__title {
+    margin-top: 8px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 12px;
+    border-radius: 50px;
+    background-color: $cv-modal-background-surface-color;
+    box-shadow: inset 0 0 3px 1px $cv-modal-box-shadow-base-color;
+  }
+
+  &__list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: $cv-modal-background-base-color;
+    border-radius: 50px;
+    box-shadow: 0 0 3px 1px $cv-modal-box-shadow-base-color;
+    transition: all 0.7s ease;
+    
+    &:hover {
+      transform: scale(1.1) rotate(720deg);
+      box-shadow: 0 0 15px $cv-modal-box-shadow-base-color;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    box-sizing: border-box;
+    border-radius: 100px;
+  }
+}

@@ -1,0 +1,29 @@
+@use '../src/shared/styles/base/global-fonts.scss' as *;
+
+$AppBackgroundColor: var(--background-primary);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #{$AppBackgroundColor};
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  pointer-events: none;
+}

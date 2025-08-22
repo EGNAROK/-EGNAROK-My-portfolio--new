@@ -1,0 +1,131 @@
+@use '../../shared/styles/mixins/responsive.scss' as r;
+
+$sidebar-background-base-color: var(--background-base);
+$sidebar-background-surface-color: var(--background-surface);
+$sidebar-border-default-color: var(--border-default);
+$sidebar-text-primary-color: var(--text-primary);
+$sidebar-box-shadow-base-color: var(--shadows-base);
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 80px;
+  height: 100vh;
+  padding: 15px 5px;
+  border-right: 1px solid $sidebar-border-default-color;
+  background-color: $sidebar-background-base-color;
+  transition: all 0.3s ease;
+
+  @include r.responsive-multiple(phone, phone-large) {
+    width: 60px;
+    padding: 10px 0;
+  }
+
+  &--collapsed {
+    width: 160px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    @include r.responsive-multiple(phone, phone-large, tablet) {
+      align-items: flex-start;
+      padding-left: 3.5px;
+    }
+  }
+
+  &__home-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: $sidebar-background-surface-color;
+    box-shadow: inset 0 0 3px 1px $sidebar-box-shadow-base-color;
+
+    @include r.responsive-multiple(phone, phone-large) {
+      width: 52px;
+      height: 52px;
+      box-shadow: inset 0 0 1px $sidebar-box-shadow-base-color;
+    }
+  }
+
+  &__home {
+    cursor: pointer;
+    background-color: $sidebar-background-base-color;
+    box-shadow: 0 0 3px 1px $sidebar-box-shadow-base-color;
+    border-radius: 50px;
+    color: $sidebar-text-primary-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+
+  &__navigation {
+    display: none;
+
+    @include r.responsive-multiple(phone, phone-large, tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      padding-left: 17.35px;
+    }
+  }
+
+  &__collapse-wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    margin: 10px auto 0;
+    border-radius: 50px;
+    background-color: $sidebar-background-surface-color;
+    box-shadow: inset 0 0 3px 1px $sidebar-box-shadow-base-color;
+
+    @include r.responsive-multiple(phone, phone-large, tablet) {
+      display: flex;
+    }
+  }
+
+  &__collapse {
+    cursor: pointer;
+    transform: rotate(90deg);
+    padding-bottom: 3px;
+    background-color: $sidebar-background-base-color;
+    box-shadow: 0 0 3px 1px $sidebar-box-shadow-base-color;
+    border-radius: 50px;
+    color: $sidebar-text-primary-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    &--active {
+      transform: rotate(270deg);
+
+      &:hover {
+
+        transform: rotate(270deg) scale(1.1);
+      }
+    }
+  }
+}
