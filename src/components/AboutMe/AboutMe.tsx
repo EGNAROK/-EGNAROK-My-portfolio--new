@@ -2,7 +2,6 @@ import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { AppContainer, AppTextBlock } from '../../shared/components'
-import { photos } from '../../assets/images';
 import './AboutMe.scss';
 
 export const AboutMe: React.FC = () => {
