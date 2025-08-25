@@ -4,18 +4,17 @@
 
 $projects-list-background-surface-color: var(--background-surface);
 $projects-list-background-base-color: var(--background-base);
+$projects-list-border-accent-color: var(--border-accent);
 $projects-list-text-primary-color: var(--text-primary);
 $projects-list-text-accent-color: var(--text-accent);
 
 .projects-list {
   position: relative;
-  z-index: 90;
+  z-index: 50;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 65px;
-  margin-top: 40px;
 
   &__item {
     position: relative;
@@ -24,55 +23,74 @@ $projects-list-text-accent-color: var(--text-accent);
     flex-direction: row;
     justify-content: space-between;
     padding: 0 25px;
-    margin: 25px 0 60px;
+    margin: 35px 0 60px;
     border-radius: 16px;
+    gap: 25px;
     color: $projects-list-text-primary-color;
 
     &--reverse {
       flex-direction: row-reverse;
+
+      .projects-list__text-block {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .projects-list__image-wrapper {
+        &::before {
+          top: -35px;
+          left: -35px;
+        }
+      }
     }
 
-    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+    @include r.responsive(desktop) {
+      justify-content: space-evenly;
+    }
+
+    @include r.responsive-multiple(phone, phone-large, tablet, tablet-large, desktop) {
       flex-direction: column;
+      gap: 25px;
       padding: 0;
     }
 
-    @include r.responsive-multiple (phone, phone-large) {
-      margin: 15px 0;
+    @include r.responsive-multiple(phone, phone-large) {
+      gap: 15px;
     }
   }
 
   &__text-block {
     display: flex;
     flex-direction: column;
-    width: 450px;
-    gap: 25px;
-    border-radius: 8px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: 0;
+    border-radius: 16px;
+    padding: 25px;
+    background-color: $projects-list-background-base-color;
 
-    @include r.responsive(desktop-large) {
-      width: 400px;
-    }
     @include r.responsive(desktop) {
-      width: 400px;
+      width: 430px;
     }
-    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
+    @include r.responsive-multiple(phone, phone-large, tablet, tablet-large, desktop) {
       width: 100%;
     }
   }
 
   &__title {
     border-radius: 6px;
+    padding-left: 25px;
   }
 
   &__description {
     height: 100%;
     border-radius: 6px;
+    padding-left: 25px;
   }
 
   &__image-wrapper {
     position: relative;
-    width: 540px;
-    height: 260px;
+    width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -81,56 +99,66 @@ $projects-list-text-accent-color: var(--text-accent);
     border-radius: 16px;
 
     @include r.responsive(desktop) {
-      width: 420px;
-      height: 220px;
+      width: 45%;
     }
 
-    @include r.responsive-multiple (phone, phone-large, tablet, tablet-large) {
-      width: 100%;
-      height: 260px;
+    @include r.responsive-multiple(phone, phone-large, tablet, tablet-large, desktop) {
+      width: 90%;
       margin-top: 32px;
     }
 
-    @include r.responsive (phone-large) {
+    @include r.responsive(phone-large) {
       height: 200px;
     }
-    @include r.responsive (phone) {
+    @include r.responsive(phone) {
       height: 150px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -35px;
+      right: -35px;
+      left: auto;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $projects-list-border-accent-color;
+      border-radius: 16px;
+
+      @include r.responsive-multiple(phone, phone-large, tablet, tablet-large, desktop) {
+        margin-left: auto;
+      }
     }
   }
 
   &__image {
+    position: relative;
     display: block;
-    width: 90%;
+    width: 100%;
     height: 100%;
     object-fit: fill;
     border-radius: 16px 18px 18px 16px;
     background-color: $projects-list-background-base-color;
-
-    @include r.responsive (phone) {
-      width: 85%;
-    }
+    z-index: 2;
   }
 
   &__link-wrapper {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 10%;
-    height: 100%;
+    width: 100%;
+    height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0 16px 16px 0;
+    border-radius: 0 0 16px 16px;
     background-color: $projects-list-background-surface-color;
     transition: all 0.3s ease;
-
-    @include r.responsive (phone) {
-      width: 15%;
-    }
+    z-index: 3;
 
     &:hover {
-      width: 100%;
+      height: 100%;
       opacity: 0.97;
       border-radius: 16px;
     }
@@ -139,13 +167,14 @@ $projects-list-text-accent-color: var(--text-accent);
       @include t.font-setup(
         f.$font-family-secondary,
         f.$font-weight-extra-bold,
-        f.$font-size-lg
+        f.$font-size-md
       );
     }
   }
 
   &__link {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -161,7 +190,23 @@ $projects-list-text-accent-color: var(--text-accent);
     );
 
     &:hover {
-      color: $projects-list-text-accent-color;
+      .projects-list__tag {
+        opacity: 1;
+        font-size: 18px;
+      }
+
+      .projects-list__link-text {
+        padding-left: 75px;
+      }
     }
+  }
+
+  &__link-text {
+    transition: all 0.3s ease;
+  }
+
+  &__tag {
+    opacity: 0;
+    transition: all 0.3s ease;
   }
 }

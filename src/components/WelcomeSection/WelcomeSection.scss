@@ -2,14 +2,22 @@
 @use "../../shared/styles/mixins/typography.scss" as t;
 @use "../../shared/styles/mixins/responsive.scss" as r;
 
+$welcome-component-background-base-color: var(--background-base);
 $welcome-component-background-surface-color: var(--background-surface);
 $welcome-component-border-default-color: var(--border-default);
+$welcome-component-box-shadows-base-color: var(--shadows-base);
+$welcome-component-text-primary-color: var(--text-primary);
+$welcome-component-text-secondary-color: var(--text-secondary);
+$welcome-component-text-accent-color: var(--text-accent);
+
 
 .welcome {
   position: relative;
   display: flex;
   width: 100%;
   height: 100vh;
+  // margin-bottom: 120px;
+  
 
   &__container {
     display: flex;
@@ -18,32 +26,139 @@ $welcome-component-border-default-color: var(--border-default);
     margin-top: 60px;
 
     @include r.responsive-multiple(phone, phone-large) {
-      text-align: center;
+      // text-align: center;
     }
   }
 
-  &__text-block {
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
     @include r.responsive-multiple(phone, phone-large) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      height: 160px;
-      text-align: center;
+      gap: 40px
     }
+
+  }
+
+  &__title {
+    @include t.font-setup(f.$font-family-secondary,
+      f.$font-weight-semi-bold,
+      f.$font-size-xxxl );
+    color: $welcome-component-text-primary-color;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+
+    @include r.responsive(tablet-large) {
+      @include t.font-setup(f.$font-family-secondary,
+        f.$font-weight-semi-bold,
+        f.$font-size-xxl );
+    }
+
+    @include r.responsive(tablet) {
+      @include t.font-setup(f.$font-family-secondary,
+        f.$font-weight-semi-bold,
+        f.$font-size-xl );
+        padding-left: 20px;
+    }
+
+    @include r.responsive(phone-large) {
+      @include t.font-setup(f.$font-family-secondary,
+        f.$font-weight-medium,
+        f.$font-size-lg );
+        padding-left: 15px;
+    }
+
+    @include r.responsive(phone) {
+      @include t.font-setup(f.$font-family-secondary,
+        f.$font-weight-regular,
+        f.$font-size-md );
+        padding-left: 10px;
+    }
+  }
+
+  &__highlight {
+    display: flex;
+  }
+
+  &__name {
+    margin-left: 20px;
+    color: $welcome-component-text-accent-color;
+
+    @include r.responsive-multiple(tablet, tablet-large) {
+      margin-left: 15px;
+    }
+
+    @include r.responsive-multiple(phone, phone-large) {
+      margin-left: 10px;
+    }
+  }
+
+  // &__description-wrapper {
+  //   padding-left: 25px;
+  // }
+
+  &__description {
+    padding-left: 25px;
+    color: $welcome-component-text-primary-color;
+
+    @include r.responsive(tablet-large) {
+      width: 70%;
+    }
+
+    @include r.responsive(tablet) {
+      width: 80%;
+      padding-left: 20px;
+    }
+    @include r.responsive(phone-large) {
+      padding-left: 15px;
+    }
+
+    @include r.responsive(phone) {
+      @include t.font-setup(f.$font-family-secondary,
+        f.$font-weight-regular,
+        f.$font-size-3xs );
+        padding-left: 10px;
+    }
+    
   }
 
   &__button-wrapper {
-    position: relative;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background-color: $welcome-component-background-surface-color;
+    box-shadow: inset 0 0 3px 1px $welcome-component-box-shadows-base-color;
   }
 
   &__button {
-    margin-top: 120px;
-    padding: 16px 24px;
+    // position: absolute;
+    // bottom: 15px;
+    // right: 15px;
+    // margin-top: 120px;
+    // padding: 16px 15px;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
     font-weight: 600;
+    background-color: $welcome-component-background-base-color;
+    box-shadow: 0 0 3px 1px $welcome-component-box-shadows-base-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     @include r.responsive-multiple(phone, phone-large) {
-      margin-top: 80px;
-      padding: 8px 24px;
+      // margin-top: 80px;
+      // padding: 8px 24px;
     }
   }
 }

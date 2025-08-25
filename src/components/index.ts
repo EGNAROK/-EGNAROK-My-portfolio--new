@@ -10,7 +10,6 @@ import { Languages } from "./Languages/Languages";
 import { MyProjects } from "./MyProjects/MyProjects";
 import { Contact } from "./Contact/Contact";
 import { SocialLinks } from "./SocialLinks/SocialLinks";
-import { AnimatedLine } from "./AnimatedLine/AnimatedLine";
 
 export {
   Header,
@@ -24,6 +23,5 @@ export {
   Languages,
   MyProjects,
   Contact,
-  SocialLinks,
-  AnimatedLine,
+  SocialLinks
 };

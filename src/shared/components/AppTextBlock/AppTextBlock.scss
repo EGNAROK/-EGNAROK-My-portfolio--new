@@ -8,6 +8,8 @@ $app-text-block-text-secondary-color: var(--text-secondary);
 $app-text-block-text-shadow-base-color: var(--shadows-base);
 
 .app-text-block {
+  position: relative;
+  z-index: 5;
   &__text-align {
     &--left {
       text-align: left;

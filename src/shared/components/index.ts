@@ -4,6 +4,7 @@ import { AppTextBlock } from "./AppTextBlock/AppTextBlock";
 import { ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher";
 import { LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
 import { AppModal } from "./AppModal/AppModal";
+import { AnimatedLine } from "./AnimatedLine/AnimatedLine";
 
 export {
   AppButton,
@@ -11,5 +12,6 @@ export {
   AppTextBlock,
   ThemeSwitcher,
   LanguageSwitcher,
-  AppModal
+  AppModal,
+  AnimatedLine
 };

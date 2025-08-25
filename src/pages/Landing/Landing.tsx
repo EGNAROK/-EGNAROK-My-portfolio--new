@@ -1,7 +1,6 @@
 import React from "react";
 import {
   AboutMe,
-  AnimatedLine,
   Contact,
   Header,
   MyProjects,
@@ -11,6 +10,7 @@ import {
 } from "../../components";
 import "./Landing.scss";
 import { backgrounds } from "../../assets/images";
+import { AnimatedLine } from "../../shared/components";
 
 export const Landing: React.FC = () => {
   return (
@@ -23,23 +23,18 @@ export const Landing: React.FC = () => {
         </header>
         <main className="landing-page__main">
           <WelcomeSection />
-          <AnimatedLine duration="10s" />
-          <AboutMe />
+          <div id="aboutMe" className="landing-page__about-me-wrapper">
+            <AnimatedLine duration="10s" />
+            <AboutMe />
+          </div>
           <AnimatedLine />
           <MySkills />
-          <AnimatedLine duration="7s" />
-          <div className="landing-page__projects-contact-wrapper">
+          <div id="projects" className="landing-page__projects-contact-wrapper">
+            <AnimatedLine duration="7s" />
             <MyProjects />
             <AnimatedLine duration="8s" />
-            <Contact />
-            <div className="landing-page__background-wrapper">
-              <img
-                src={backgrounds.background}
-                alt=""
-                className="landing-page__background-image"
-              />
-            </div>
           </div>
+          <Contact />
         </main>
       </div>
     </div>

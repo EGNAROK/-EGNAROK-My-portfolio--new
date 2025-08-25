@@ -6,12 +6,14 @@ import "./CVModal.scss";
 export const CVModal: React.FC = () => {
   return (
     <div className="cv-modal">
+       <div className="tag">&lt;h3&gt;</div>
       <AppTextBlock
         description="My CV"
         descriptionTextSize="md"
         descriptionTextColor="primary"
         className="cv-modal__title"
       />
+       <div className="tag">&lt;/h3&gt;</div>
       <ul className="cv-modal__list">
         <li className="cv-modal__list-item">
           <a

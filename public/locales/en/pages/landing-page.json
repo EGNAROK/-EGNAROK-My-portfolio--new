@@ -10,9 +10,11 @@
         "contact": "Contact"
     },
     "welcomeSection": {
-        "preTitle": "Hi, I'm",
-        "title": "Serhii Machkovskiy",
+        "preTitle": "Hey",
+        "title": "I'm",
+        "name": "Serhii",
         "description": "Front-end Developer",
+        "aboutMe": "I build clean and user-friendly web interfaces while constantly improving my skills",
         "download_cv": "Download CV"
     },
     "about": {

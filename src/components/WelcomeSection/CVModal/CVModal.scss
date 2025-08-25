@@ -7,13 +7,14 @@ $cv-modal-box-shadow-base-color: var(--shadows-base);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  height: 100%;
+  // width: 280px;
+  // height: 300px;
   margin-top: 8px;
   border-top: 1px solid $cv-modal-border-default-color;
 
   &__title {
-    margin-top: 8px;
+    padding-left: 25px;
+    // margin-top: 8px;
   }
 
   &__list {

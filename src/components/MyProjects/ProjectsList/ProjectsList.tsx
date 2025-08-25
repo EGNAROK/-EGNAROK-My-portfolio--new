@@ -24,18 +24,22 @@ export const ProjectsList: React.FC = () => {
             }`}
           >
             <div className="projects-list__text-block">
+              <div className="tag">&lt;h3&gt;</div>
               <AppTextBlock
                 preTitle={t(project.title)}
                 preTitleTextSize="lg"
                 preTitleTextColor="primary"
                 className="projects-list__title"
               />
+              <div className="tag">&lt;/h3&gt;</div>
+              <div className="tag">&lt;p&gt;</div>
               <AppTextBlock
                 description={t(project.description)}
                 descriptionTextSize="sm"
                 descriptionTextColor="secondary"
                 className="projects-list__description"
               />
+              <div className="tag">&lt;/p&gt;</div>
             </div>
             <div className="projects-list__image-wrapper">
               <img
@@ -44,14 +48,18 @@ export const ProjectsList: React.FC = () => {
                 className="projects-list__image"
               />
               <div className="projects-list__link-wrapper">
+                
                 <a
                   href={project.link}
                   className="projects-list__link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Link
+                  <div className="tag projects-list__tag">&lt;a&gt;</div>
+                  <span className="projects-list__link-text">View</span>
+                  <div className="tag projects-list__tag">&lt;/a&gt;</div>
                 </a>
+                
               </div>
             </div>
           </li>

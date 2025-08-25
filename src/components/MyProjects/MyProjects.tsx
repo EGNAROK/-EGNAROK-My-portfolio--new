@@ -1,15 +1,26 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { AppContainer, AppTextBlock } from "../../shared/components";
 import { ProjectsList } from "./ProjectsList/ProjectsList";
+import { backgrounds } from "../../assets/images";
+import type { RootState } from "../../store/store";
 import "./MyProjects.scss";
 
 export const MyProjects: React.FC = () => {
   const { t } = useTranslation(["pages/landing-page"]);
+   const theme = useSelector((state: RootState) => state.theme.mode);
 
   return (
-    <div id="projects" className="my-projects">
+    <div className="my-projects">
+      <div className="my-projects__background">
+        <img
+          src={backgrounds.background_about_component}
+          alt="background"
+          className="my-projects__background-image"
+        />
+      </div>
       <AppContainer className="my-projects__container">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
