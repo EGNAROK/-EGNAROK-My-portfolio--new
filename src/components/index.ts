@@ -2,6 +2,7 @@ import { Header } from "./Header/Header";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Navigation } from "./Navigation/Navigation";
 import { WelcomeSection } from "./WelcomeSection/WelcomeSection";
+import { CV } from "./CV/CV";
 import { AboutMe } from "./AboutMe/AboutMe";
 import { MySkills } from "./MySkills/MySkills";
 import { Education } from "./Education/Education";
@@ -16,6 +17,7 @@ export {
   Sidebar,
   Navigation,
   WelcomeSection,
+  CV,
   AboutMe,
   MySkills,
   Education,
@@ -23,5 +25,5 @@ export {
   Languages,
   MyProjects,
   Contact,
-  SocialLinks
+  SocialLinks,
 };

@@ -5,6 +5,7 @@
 $app-text-block-text-accent-color: var(--text-accent);
 $app-text-block-text-primary-color: var(--text-primary);
 $app-text-block-text-secondary-color: var(--text-secondary);
+$app-text-block-text-white-color: var(--staticColors-whiteColor);
 $app-text-block-text-shadow-base-color: var(--shadows-base);
 
 .app-text-block {
@@ -94,7 +95,10 @@ $app-text-block-text-shadow-base-color: var(--shadows-base);
 
       &--accent {
         color: $app-text-block-text-accent-color;
-        text-shadow: 0 1px 1px $app-text-block-text-shadow-base-color;
+      }
+
+      &--white {
+        color: $app-text-block-text-white-color;
       }
     }
   }
@@ -193,7 +197,10 @@ $app-text-block-text-shadow-base-color: var(--shadows-base);
 
       &--accent {
         color: $app-text-block-text-accent-color;
-        text-shadow: 0 2px 2px $app-text-block-text-shadow-base-color;
+      }
+
+      &--white {
+        color: $app-text-block-text-white-color;
       }
     }
   }
@@ -278,7 +285,10 @@ $app-text-block-text-shadow-base-color: var(--shadows-base);
 
       &--accent {
         color: $app-text-block-text-accent-color;
-        text-shadow: 0 1px 1px $app-text-block-text-shadow-base-color;
+      }
+
+      &--white {
+        color: $app-text-block-text-white-color;
       }
     }
   }

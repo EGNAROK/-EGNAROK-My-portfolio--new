@@ -1,9 +1,8 @@
-import background_about_component from './Background_1.avif';
-import background from './Background_2.jpg';
-import ba from './3.png';
+import background_dark_theme from './Background_1.avif';
+import background_light_theme from './Background_2.avif';
+
 
 export {
-    background_about_component,
-    background,
-    ba
+    background_dark_theme,
+    background_light_theme,
 }

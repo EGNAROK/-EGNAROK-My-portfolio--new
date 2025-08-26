@@ -2,13 +2,8 @@
 @use "../../shared/styles/mixins/typography.scss" as t;
 @use "../../shared/styles/mixins/responsive.scss" as r;
 
-$welcome-component-background-base-color: var(--background-base);
-$welcome-component-background-surface-color: var(--background-surface);
-$welcome-component-border-default-color: var(--border-default);
-$welcome-component-box-shadows-base-color: var(--shadows-base);
-$welcome-component-text-primary-color: var(--text-primary);
-$welcome-component-text-secondary-color: var(--text-secondary);
-$welcome-component-text-accent-color: var(--text-accent);
+$welcome-text-primary-color: var(--text-primary);
+$welcome-text-accent-color: var(--text-accent);
 
 .welcome {
   position: relative;
@@ -42,7 +37,7 @@ $welcome-component-text-accent-color: var(--text-accent);
       f.$font-weight-semi-bold,
       f.$font-size-xxxl
     );
-    color: $welcome-component-text-primary-color;
+    color: $welcome-text-primary-color;
 
     @include r.responsive(tablet-large) {
       @include t.font-setup(
@@ -86,7 +81,7 @@ $welcome-component-text-accent-color: var(--text-accent);
 
   &__name {
     margin-left: 20px;
-    color: $welcome-component-text-accent-color;
+    color: $welcome-text-accent-color;
 
     @include r.responsive-multiple(tablet, tablet-large) {
       margin-left: 15px;
@@ -99,7 +94,7 @@ $welcome-component-text-accent-color: var(--text-accent);
 
   &__description {
     padding-left: 25px;
-    color: $welcome-component-text-primary-color;
+    color: $welcome-text-primary-color;
 
     @include r.responsive(tablet-large) {
       width: 70%;
@@ -121,34 +116,6 @@ $welcome-component-text-accent-color: var(--text-accent);
         f.$font-size-3xs
       );
       padding-left: 10px;
-    }
-  }
-
-  &__button-wrapper {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75px;
-    height: 75px;
-    border-radius: 100%;
-    background-color: $welcome-component-background-surface-color;
-    box-shadow: inset 0 0 3px 1px $welcome-component-box-shadows-base-color;
-  }
-
-  &__button {
-    width: 55px;
-    height: 55px;
-    border-radius: 100%;
-    background-color: $welcome-component-background-base-color;
-    box-shadow: 0 0 3px 1px $welcome-component-box-shadows-base-color;
-    font-weight: 600;
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: scale(1.1);
     }
   }
 }

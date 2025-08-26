@@ -26,6 +26,8 @@ $my-projects-box-shadow-base-color: var(--shadows-base);
   }
 
   &__container {
+    position: relative;
+    z-index: 2;
     padding: 120px 50px 60px;
     @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
       padding: 50px 20px 0;

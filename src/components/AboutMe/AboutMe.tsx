@@ -3,16 +3,23 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { AppContainer, AppTextBlock } from "../../shared/components";
 import { backgrounds, photos } from "../../assets/images";
+import { useTheme } from "../../shared/hooks";
 import "./AboutMe.scss";
 
 export const AboutMe: React.FC = () => {
   const { t } = useTranslation(["pages/landing-page"]);
+  const { mode } = useTheme();
+
+  const backgroundSrc =
+    mode === "dark"
+      ? backgrounds.background_dark_theme
+      : backgrounds.background_light_theme;
 
   return (
     <div className="about-me">
       <div className="about-me__background">
         <img
-          src={backgrounds.background_about_component}
+          src={backgroundSrc}
           alt="background"
           className="about-me__background-image"
         />
@@ -29,6 +36,7 @@ export const AboutMe: React.FC = () => {
             src={photos.my_photo}
             alt="Serhii – front-end developer"
             className="about-me__image"
+            loading="lazy"
           />
         </motion.div>
         <motion.div
@@ -41,7 +49,7 @@ export const AboutMe: React.FC = () => {
           <div className="about-me__title-wrapper">
             <AppTextBlock
               title={t("about.title")}
-              titleTextColor="accent"
+              titleTextColor="white"
               className="about-me__title"
             />
           </div>

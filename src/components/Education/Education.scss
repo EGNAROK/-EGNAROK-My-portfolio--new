@@ -31,12 +31,16 @@ $education-text-primary-color: var(--text-primary);
     display: flex;
     align-items: center;
     margin-top: 25px;
+    gap: 10px;
   }
 
   &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60px;
     height: 60px;
-    margin-right: 12px;
+    border-radius: 50px;
 
     @include r.responsive-multiple(phone, phone-large) {
       width: 50px;
@@ -49,6 +53,10 @@ $education-text-primary-color: var(--text-primary);
     height: 100%;
     box-sizing: border-box;
     object-fit: contain;
+  }
+
+  &__info {
+    width: 70%;
   }
 
   &__years {

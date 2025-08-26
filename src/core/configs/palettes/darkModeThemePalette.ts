@@ -13,13 +13,12 @@ export const darkModeThemePalette = {
     primary: 'rgb(254, 254, 254)',    
     secondary: 'rgb(198, 198, 198)',    
     muted: 'rgb(149, 149, 149)',         
-    accent: 'rgba(152, 250, 236, 1)',        
-    highlight: 'rgba(59, 59, 59, 1)'
+    accent: 'rgba(152, 250, 236, 1)'
   },
   border: {
     default: 'rgba(95, 95, 95, 0.5)',      
-    accent: 'rgba(152, 250, 235, 0.6)',       
-
+    accent: 'rgba(152, 250, 235, 0.6)',  
+    highlight: 'rgba(152, 250, 236, 1)'    
   },
   shadows: {
     base: 'rgb(0, 0, 0)',

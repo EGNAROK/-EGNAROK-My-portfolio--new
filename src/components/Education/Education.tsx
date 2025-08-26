@@ -22,7 +22,6 @@ export const Education: React.FC = () => {
         preTitleTextSize="lg"
         className="education__title"
       />
-
       <div className="education__list">
         <div className="education__item">
           <div className="education__image-wrapper">
@@ -42,7 +41,6 @@ export const Education: React.FC = () => {
             <span className="education__years">2011 - 2016</span>
           </div>
         </div>
-
         <div className="education__item">
           <div className="education__image-wrapper">
             <img

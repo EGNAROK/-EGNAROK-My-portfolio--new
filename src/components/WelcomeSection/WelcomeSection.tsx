@@ -1,17 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { AppButton, AppContainer, AppModal } from "../../shared/components";
-import { CVModal } from "./CVModal/CVModal";
-import { useModal } from "../../shared/hooks/useModal/useModal";
+import { AppContainer } from "../../shared/components";
+import { CV } from "../index";
 import "./WelcomeSection.scss";
 
 export const WelcomeSection: React.FC = () => {
-  const { isOpen, toggleModal, closeModal } = useModal();
   const { t } = useTranslation(["pages/landing-page"]);
 
   return (
     <section id="home" className="welcome">
-      <div className="welcome__background"></div>
       <AppContainer className="welcome__container">
         <div className="welcome__text-wrapper">
           <div className="welcome__title-wrapper">
@@ -39,19 +36,7 @@ export const WelcomeSection: React.FC = () => {
           </div>
         </div>
       </AppContainer>
-      <div className="welcome__button-wrapper">
-        <AppButton
-          variant="outline"
-          size="sm"
-          className="welcome__button"
-          onClick={toggleModal}
-        >
-          CV
-        </AppButton>
-      </div>
-      <AppModal isOpen={isOpen} onClose={closeModal} className="welcome__modal">
-        <CVModal />
-      </AppModal>
+      <CV />
     </section>
   );
 };

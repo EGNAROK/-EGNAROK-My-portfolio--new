@@ -6,13 +6,13 @@ interface AppTextBlockProps {
   textAlign?: "left" | "center" | "right";
   preTitle?: string;
   preTitleTextSize?: "xs" | "sm" | "md" | "lg";
-  preTitleTextColor?: "primary" | "secondary" | "accent";
+  preTitleTextColor?: "primary" | "secondary" | "accent" | "white";
   title?: string;
   titleTextSize?: "xs" | "sm" | "md" | "lg";
-  titleTextColor?: "primary" | "secondary" | "accent";
+  titleTextColor?: "primary" | "secondary" | "accent" | "white";
   description?: string;
   descriptionTextSize?: "xs" | "sm" | "md" | "lg";
-  descriptionTextColor?: "primary" | "secondary" | "accent";
+  descriptionTextColor?: "primary" | "secondary" | "accent" | "white";
 }
 
 export const AppTextBlock: React.FC<AppTextBlockProps> = ({

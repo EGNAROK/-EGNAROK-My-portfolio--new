@@ -31,6 +31,7 @@ $work-experience-text-primary-color: var(--text-primary);
     display: flex;
     align-items: center;
     margin-top: 25px;
+    gap: 10px;
   }
 
   &__image-wrapper {
@@ -39,8 +40,6 @@ $work-experience-text-primary-color: var(--text-primary);
     align-items: center;
     width: 60px;
     height: 60px;
-    margin-right: 12px;
-    background-color: $work-experience-background-static-white-color;
     border-radius: 50px;
 
     @include r.responsive-multiple(phone, phone-large) {
@@ -57,11 +56,21 @@ $work-experience-text-primary-color: var(--text-primary);
     border-radius: 50px;
   }
 
+  &__info {
+    width: 70%;
+  }
+
   &__years {
     display: block;
     margin-top: 6px;
     color: $work-experience-text-primary-color;
     font-size: 14px;
     font-weight: 600;
+  }
+
+  &__item:nth-child(2) {
+    .work-experience__image-wrapper {
+      background-color: $work-experience-background-static-white-color;
+    }
   }
 }
