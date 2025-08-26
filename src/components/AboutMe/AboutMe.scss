@@ -42,7 +42,7 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
     @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
       flex-direction: column-reverse;
       justify-content: space-evenly;
-      padding: 0;
+      padding: 50px 20px;
       gap: 32px;
     }
   }
