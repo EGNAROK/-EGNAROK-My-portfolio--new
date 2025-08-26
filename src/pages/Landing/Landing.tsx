@@ -9,7 +9,6 @@ import {
   WelcomeSection,
 } from "../../components";
 import "./Landing.scss";
-import { backgrounds } from "../../assets/images";
 import { AnimatedLine } from "../../shared/components";
 
 export const Landing: React.FC = () => {

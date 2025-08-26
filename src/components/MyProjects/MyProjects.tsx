@@ -1,16 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { AppContainer, AppTextBlock } from "../../shared/components";
 import { ProjectsList } from "./ProjectsList/ProjectsList";
 import { backgrounds } from "../../assets/images";
-import type { RootState } from "../../store/store";
 import "./MyProjects.scss";
 
 export const MyProjects: React.FC = () => {
   const { t } = useTranslation(["pages/landing-page"]);
-   const theme = useSelector((state: RootState) => state.theme.mode);
 
   return (
     <div className="my-projects">
