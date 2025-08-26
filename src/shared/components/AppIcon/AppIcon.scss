@@ -3,9 +3,8 @@ $icon-background-accent-color: var(--background-accent);
 $icon-background-surface-color: var(--background-surface);
 $icon-background-default-color: var(--background-default);
 
-
 .app-icon {
-    &.icon-white {
+  &.icon-white {
     color: $icon-background-white-color;
   }
 

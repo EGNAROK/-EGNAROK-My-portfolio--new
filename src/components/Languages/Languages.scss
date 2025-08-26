@@ -19,7 +19,6 @@ $language-list-box-shadow-color: var(--shadows-base);
     width: 100%;
     padding: 25px;
     background-color: $language-list-background-surface-color;
-    // box-shadow: 0 0 3px 1px $language-list-box-shadow-color;
     border-radius: 16px;
 
     @include r.responsive-multiple(phone, phone-large) {

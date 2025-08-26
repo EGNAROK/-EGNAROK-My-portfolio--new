@@ -1,29 +1,29 @@
-@use '../../../shared/styles/mixins/responsive.scss' as r;
+@use "../../../shared/styles/mixins/responsive.scss" as r;
 
 .app-container {
-    width: 1200px;
-    margin: 0 auto;
-    padding: 0 12px;
-    overflow: hidden;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+  overflow: hidden;
 
-    @include r.responsive(desktop-large) {
-        width: 1100px;
-    }
-    @include r.responsive(desktop) {
-        width: 900px;
-    }
-    @include r.responsive(tablet-large) {
-        width: 680px;
-    }
-    @include r.responsive(tablet) {
-        width: 500px;
-    }
-    @include r.responsive(phone-large) {
-        width: 400px;
-        padding: 0 8px;
-    }
-    @include r.responsive(phone) {
-        width: clamp(240px, 75vw, 400px);
-        padding: 0;
-    }
+  @include r.responsive(desktop-large) {
+    width: 1100px;
+  }
+  @include r.responsive(desktop) {
+    width: 900px;
+  }
+  @include r.responsive(tablet-large) {
+    width: 680px;
+  }
+  @include r.responsive(tablet) {
+    width: 500px;
+  }
+  @include r.responsive(phone-large) {
+    width: 400px;
+    padding: 0 8px;
+  }
+  @include r.responsive(phone) {
+    width: clamp(240px, 75vw, 400px);
+    padding: 0;
+  }
 }

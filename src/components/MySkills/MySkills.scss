@@ -8,7 +8,6 @@ $my-skills-box-shadow-color: var(--shadows-base);
 
 .my-skills {
   padding: 120px 0;
-  
 
   &__content {
     padding: 0 25px;
@@ -53,7 +52,6 @@ $my-skills-box-shadow-color: var(--shadows-base);
       padding: 15px 15px;
       color: $my-skills-text-primary-color;
       background-color: $my-skills-background-surface-color;
-      // box-shadow: 0 0 3px 1px $my-skills-box-shadow-color;
       border-radius: 16px;
 
       @include r.responsive(desktop-large) {

@@ -47,7 +47,12 @@ $scrollbar-thumb-border-accent-color: var(--border-accent);
     }
   }
 
-  &__about-me-wrapper, &__projects-contact-wrapper {
-    // padding-top: 120px;
+  &__about-me-wrapper,
+  &__projects-contact-wrapper {
+    padding-top: 120px;
+
+    @include r.responsive-multiple(phone, phone-large) {
+      margin-top: 60px;
+    }
   }
 }

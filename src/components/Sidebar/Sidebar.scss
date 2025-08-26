@@ -1,4 +1,4 @@
-@use '../../shared/styles/mixins/responsive.scss' as r;
+@use "../../shared/styles/mixins/responsive.scss" as r;
 
 $sidebar-background-base-color: var(--background-base);
 $sidebar-background-surface-color: var(--background-surface);
@@ -10,7 +10,7 @@ $sidebar-box-shadow-base-color: var(--shadows-base);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,6 +29,11 @@ $sidebar-box-shadow-base-color: var(--shadows-base);
 
   &--collapsed {
     width: 160px;
+
+    + .sidebar-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   &__content {
@@ -73,7 +78,6 @@ $sidebar-box-shadow-base-color: var(--shadows-base);
     &:hover {
       transform: scale(1.1);
     }
-
   }
 
   &__navigation {
@@ -115,7 +119,6 @@ $sidebar-box-shadow-base-color: var(--shadows-base);
     transition: all 0.3s ease;
 
     &:hover {
-
       transform: rotate(90deg) scale(1.1);
     }
 
@@ -123,9 +126,21 @@ $sidebar-box-shadow-base-color: var(--shadows-base);
       transform: rotate(270deg);
 
       &:hover {
-
         transform: rotate(270deg) scale(1.1);
       }
     }
   }
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
 }

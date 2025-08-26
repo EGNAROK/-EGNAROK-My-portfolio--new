@@ -47,7 +47,9 @@ export const AppTextBlock: React.FC<AppTextBlockProps> = ({
         </h2>
       )}
       {description && (
-        <p className={`app-text-block__description app-text-block__description-size--${descriptionTextSize} app-text-block__description-color--${descriptionTextColor}`}>
+        <p
+          className={`app-text-block__description app-text-block__description-size--${descriptionTextSize} app-text-block__description-color--${descriptionTextColor}`}
+        >
           {description}
         </p>
       )}

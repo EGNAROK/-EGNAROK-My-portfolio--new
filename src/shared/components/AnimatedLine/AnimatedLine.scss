@@ -3,38 +3,48 @@
 $animated-line-border-default-color: var(--border-default);
 $animated-line-after-border-accent-color: var(--border-accent);
 
-$animated-line-background: linear-gradient(to right, transparent, $animated-line-border-default-color, transparent);
-$animated-line-after-background: linear-gradient(to right, transparent, $animated-line-after-border-accent-color, transparent);
+$animated-line-background: linear-gradient(
+  to right,
+  transparent,
+  $animated-line-border-default-color,
+  transparent
+);
+$animated-line-after-background: linear-gradient(
+  to right,
+  transparent,
+  $animated-line-after-border-accent-color,
+  transparent
+);
 
 .animated-line {
-    position: relative;
-    width: 100%;
-    height: 1px;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: 0 auto;
+  background: $animated-line-background;
+  overflow: hidden;
+
+  @include r.responsive-multiple(phone, phone-large) {
     margin: 0 auto;
-    background: $animated-line-background;
-    overflow: hidden;
+  }
 
-    @include r.responsive-multiple (phone, phone-large) {
-        margin: 0 auto;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 20%;
+    height: 100%;
+    background: $animated-line-after-background;
+    animation: slide var(--slide-duration, 5s) linear infinite;
+  }
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -30%;
-        width: 20%;
-        height: 100%;
-        background: $animated-line-after-background;
-        animation: slide var(--slide-duration, 5s) linear infinite;
+  @keyframes slide {
+    0% {
+      transform: translateX(-100%);
     }
-
-    @keyframes slide {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(800%);
-        }
+    100% {
+      transform: translateX(800%);
     }
+  }
 }

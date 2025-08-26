@@ -8,10 +8,8 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
 .about-me {
   position: relative;
   display: flex;
-  // margin: 0 4px;
   overflow: hidden;
   box-shadow: inset 0 0 3px 1px $about-me-text-box-shadow-base-color;
-  // border-radius: 14px;
 
   &__background {
     position: absolute;
@@ -27,17 +25,16 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
     width: 100%;
     height: 100%;
     object-fit: fill;
-    // border-radius: 10px;
     box-shadow: 0 0 3px 1px $about-me-text-box-shadow-base-color;
   }
 
   &__container {
     position: relative;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 120px 50px;
-    z-index: 10;
 
     @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
       flex-direction: column-reverse;
@@ -67,9 +64,9 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
       border-radius: 16px;
 
       @include r.responsive-multiple(phone, phone-large) {
-      top: -25px;
-      left: -25px;
-    }
+        top: -25px;
+        left: -25px;
+      }
     }
 
     @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {
@@ -78,18 +75,18 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
 
     @include r.responsive-multiple(phone, phone-large) {
       width: 200px;
-    height: 240px;
+      height: 240px;
     }
   }
 
   &__image {
     position: relative;
+    z-index: 2;
     display: block;
     width: 100%;
     height: 100%;
     border-radius: 16px;
     object-fit: cover;
-    z-index: 2;
   }
 
   &__text-wrapper {
@@ -104,16 +101,15 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
     @include r.responsive-multiple(tablet, tablet-large) {
       width: 90%;
     }
-
     @include r.responsive-multiple(phone, phone-large) {
       width: 94%;
     }
   }
 
   &__description-wrapper {
-    background-color: $about-me-background-base-color;
     margin: 0 25px;
     padding: 25px;
+    background-color: $about-me-background-base-color;
     border-radius: 16px;
 
     @include r.responsive-multiple(phone, phone-large, tablet, tablet-large) {

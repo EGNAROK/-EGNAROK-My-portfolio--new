@@ -44,9 +44,9 @@ $work-experience-text-primary-color: var(--text-primary);
     border-radius: 50px;
 
     @include r.responsive-multiple(phone, phone-large) {
-    width: 50px;
-    height: 50px;
-  }
+      width: 50px;
+      height: 50px;
+    }
   }
 
   &__image {
@@ -55,7 +55,6 @@ $work-experience-text-primary-color: var(--text-primary);
     box-sizing: border-box;
     object-fit: contain;
     border-radius: 50px;
-    
   }
 
   &__years {

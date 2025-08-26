@@ -8,8 +8,8 @@ import {
   Sidebar,
   WelcomeSection,
 } from "../../components";
-import "./Landing.scss";
 import { AnimatedLine } from "../../shared/components";
+import "./Landing.scss";
 
 export const Landing: React.FC = () => {
   return (

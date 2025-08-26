@@ -1,8 +1,10 @@
-@use '../../shared/styles/mixins/responsive.scss' as r;
+@use "../../shared/styles/mixins/responsive.scss" as r;
 
 $social-links-background-base-color: var(--background-base);
 $social-links-background-surface-color: var(--background-surface);
 $social-links-icon-background-default-color: var(--background-default);
+$social-links-icon-border-default-color: var(--border-default);
+$social-links-icon-border-accent-color: var(--border-accent);
 $social-links-box-shadow-base-color: var(--shadows-base);
 
 .social-links {
@@ -17,6 +19,12 @@ $social-links-box-shadow-base-color: var(--shadows-base);
   background-color: $social-links-background-surface-color;
   box-shadow: inset 0 0 3px 1px $social-links-box-shadow-base-color;
   border-radius: 50px;
+  border: 3px solid $social-links-background-base-color;
+
+  &--pulse {
+    border: 3px solid $social-links-icon-border-default-color;
+    animation: pulse-border 0.6s ease-in-out 3;
+  }
 
   @include r.responsive-multiple(phone, phone-large) {
     width: 50px;
@@ -24,18 +32,18 @@ $social-links-box-shadow-base-color: var(--shadows-base);
   }
 
   &__item {
-    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
     background-color: $social-links-background-base-color;
-    box-shadow: 0 0 3px 1px var(--shadows-base);
+    box-shadow: 0 0 3px 1px $social-links-box-shadow-base-color;
     border-radius: 50px;
+    list-style: none;
     transition: all 0.3s ease;
 
     @include r.responsive-multiple(phone, phone-large) {
-        padding: 1px;
+      padding: 1px;
     }
 
     &:hover {
@@ -45,5 +53,15 @@ $social-links-box-shadow-base-color: var(--shadows-base);
 
   &__icon {
     color: $social-links-icon-background-default-color;
+  }
+}
+
+@keyframes pulse-border {
+  0%,
+  100% {
+    border-color: $social-links-icon-border-default-color;
+  }
+  50% {
+    border-color: $social-links-icon-border-accent-color;
   }
 }

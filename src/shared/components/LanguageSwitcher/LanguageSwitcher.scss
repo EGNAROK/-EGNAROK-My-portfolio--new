@@ -23,7 +23,11 @@ $language-switcher-text-primary-color: var(--text-primary);
   }
 
   &__current {
-    @include t.font-setup(f.$font-family-secondary, f.$font-weight-bold, f.$font-size-sm);
+    @include t.font-setup(
+      f.$font-family-secondary,
+      f.$font-weight-bold,
+      f.$font-size-sm
+    );
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +40,7 @@ $language-switcher-text-primary-color: var(--text-primary);
     text-transform: uppercase;
     transition: all 0.3s ease;
 
-    @include r.responsive-multiple (phone, phone-large) {
+    @include r.responsive-multiple(phone, phone-large) {
       width: 35px;
       height: 35px;
     }

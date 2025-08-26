@@ -10,24 +10,17 @@ $welcome-component-text-primary-color: var(--text-primary);
 $welcome-component-text-secondary-color: var(--text-secondary);
 $welcome-component-text-accent-color: var(--text-accent);
 
-
 .welcome {
   position: relative;
   display: flex;
   width: 100%;
   height: 100vh;
-  // margin-bottom: 120px;
-  
 
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 60px;
-
-    @include r.responsive-multiple(phone, phone-large) {
-      // text-align: center;
-    }
   }
 
   &__text-wrapper {
@@ -36,45 +29,54 @@ $welcome-component-text-accent-color: var(--text-accent);
     gap: 25px;
 
     @include r.responsive-multiple(phone, phone-large) {
-      gap: 40px
+      gap: 40px;
     }
-
   }
 
   &__title {
-    @include t.font-setup(f.$font-family-secondary,
-      f.$font-weight-semi-bold,
-      f.$font-size-xxxl );
-    color: $welcome-component-text-primary-color;
     display: flex;
     flex-direction: column;
     padding-left: 25px;
+    @include t.font-setup(
+      f.$font-family-secondary,
+      f.$font-weight-semi-bold,
+      f.$font-size-xxxl
+    );
+    color: $welcome-component-text-primary-color;
 
     @include r.responsive(tablet-large) {
-      @include t.font-setup(f.$font-family-secondary,
+      @include t.font-setup(
+        f.$font-family-secondary,
         f.$font-weight-semi-bold,
-        f.$font-size-xxl );
+        f.$font-size-xxl
+      );
     }
 
     @include r.responsive(tablet) {
-      @include t.font-setup(f.$font-family-secondary,
+      @include t.font-setup(
+        f.$font-family-secondary,
         f.$font-weight-semi-bold,
-        f.$font-size-xl );
-        padding-left: 20px;
+        f.$font-size-xl
+      );
+      padding-left: 20px;
     }
 
     @include r.responsive(phone-large) {
-      @include t.font-setup(f.$font-family-secondary,
+      @include t.font-setup(
+        f.$font-family-secondary,
         f.$font-weight-medium,
-        f.$font-size-lg );
-        padding-left: 15px;
+        f.$font-size-lg
+      );
+      padding-left: 15px;
     }
 
     @include r.responsive(phone) {
-      @include t.font-setup(f.$font-family-secondary,
+      @include t.font-setup(
+        f.$font-family-secondary,
         f.$font-weight-regular,
-        f.$font-size-md );
-        padding-left: 10px;
+        f.$font-size-md
+      );
+      padding-left: 10px;
     }
   }
 
@@ -95,10 +97,6 @@ $welcome-component-text-accent-color: var(--text-accent);
     }
   }
 
-  // &__description-wrapper {
-  //   padding-left: 25px;
-  // }
-
   &__description {
     padding-left: 25px;
     color: $welcome-component-text-primary-color;
@@ -111,17 +109,19 @@ $welcome-component-text-accent-color: var(--text-accent);
       width: 80%;
       padding-left: 20px;
     }
+
     @include r.responsive(phone-large) {
       padding-left: 15px;
     }
 
     @include r.responsive(phone) {
-      @include t.font-setup(f.$font-family-secondary,
+      @include t.font-setup(
+        f.$font-family-secondary,
         f.$font-weight-regular,
-        f.$font-size-3xs );
-        padding-left: 10px;
+        f.$font-size-3xs
+      );
+      padding-left: 10px;
     }
-    
   }
 
   &__button-wrapper {
@@ -139,26 +139,16 @@ $welcome-component-text-accent-color: var(--text-accent);
   }
 
   &__button {
-    // position: absolute;
-    // bottom: 15px;
-    // right: 15px;
-    // margin-top: 120px;
-    // padding: 16px 15px;
     width: 55px;
     height: 55px;
     border-radius: 100%;
-    font-weight: 600;
     background-color: $welcome-component-background-base-color;
     box-shadow: 0 0 3px 1px $welcome-component-box-shadows-base-color;
+    font-weight: 600;
     transition: all 0.3s ease;
 
     &:hover {
       transform: scale(1.1);
-    }
-
-    @include r.responsive-multiple(phone, phone-large) {
-      // margin-top: 80px;
-      // padding: 8px 24px;
     }
   }
 }

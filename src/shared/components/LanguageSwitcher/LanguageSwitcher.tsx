@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import { TRANSLATION } from "../../constants";
 import { useLanguage } from "../../hooks";
-import './LanguageSwitcher.scss';
+import "./LanguageSwitcher.scss";
 import { AppButton } from "../AppButton/AppButton";
 
 export const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, changeLanguage } = useLanguage();
 
-  const currentLangLabel = Object.values(TRANSLATION.LANGUAGES)
-    .find((lang) => lang.KEY === language)?.KEY ?? language;
+  const currentLangLabel =
+    Object.values(TRANSLATION.LANGUAGES).find((lang) => lang.KEY === language)
+      ?.KEY ?? language;
 
   const toggleDropdown = () => {
-    setIsOpen(prev => !prev)
-  }
+    setIsOpen((prev) => !prev);
+  };
 
   return (
-    <div className={`language-switcher${isOpen ? ' language-switcher--active' : ''}`} onClick={toggleDropdown}>
+    <div
+      className={`language-switcher${
+        isOpen ? " language-switcher--active" : ""
+      }`}
+      onClick={toggleDropdown}
+    >
       <p className="language-switcher__current">{currentLangLabel}</p>
 
       {isOpen && (
@@ -27,7 +33,11 @@ export const LanguageSwitcher: React.FC = () => {
               size="sm"
               fontSize="sm"
               key={lang.KEY}
-              className={`language-switcher__option${language === lang.KEY ? " language-switcher__option--active" : ""}`}
+              className={`language-switcher__option${
+                language === lang.KEY
+                  ? " language-switcher__option--active"
+                  : ""
+              }`}
               onClick={(e) => {
                 e.stopPropagation();
                 if (language !== lang.KEY) {
@@ -35,10 +45,9 @@ export const LanguageSwitcher: React.FC = () => {
                   setIsOpen(false);
                 }
               }}
-              >
+            >
               {lang.LANGUAGE_SWITCH_MENU_ITEM_TEXT}
             </AppButton>
-
           ))}
         </div>
       )}

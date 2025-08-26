@@ -32,37 +32,40 @@ export const Sidebar: React.FC = () => {
   }, [collapseSidebar]);
 
   return (
-    <div className={`sidebar ${collapseSidebar ? "sidebar--collapsed" : ""}`}>
-      <div className="sidebar__content">
-        <div className="sidebar__home-wrapper">
-          <AppIconWrapper
-            Icon={SvgHome}
-            size={42}
-            iconSize={30}
-            className="sidebar__home"
-            onClick={() => handleScroll("home")}
-          />
-        </div>
-        <Navigation
-          collapseSidebar={collapseSidebar}
-          className="sidebar__navigation"
-          variant="sidebar"
-        />
-        <div className="sidebar__links">
-          <SocialLinks />
-          <div className="sidebar__collapse-wrapper">
+    <>
+      <div className={`sidebar ${collapseSidebar ? "sidebar--collapsed" : ""}`}>
+        <div className="sidebar__content">
+          <div className="sidebar__home-wrapper">
             <AppIconWrapper
-              Icon={SvgChevron}
-              size={38}
-              iconSize={36}
-              className={`sidebar__collapse ${
-                collapseSidebar ? "sidebar__collapse--active" : ""
-              }`}
-              onClick={toggleSidebar}
+              Icon={SvgHome}
+              size={42}
+              iconSize={30}
+              className="sidebar__home"
+              onClick={() => handleScroll("home")}
             />
+          </div>
+          <Navigation
+            collapseSidebar={collapseSidebar}
+            className="sidebar__navigation"
+            variant="sidebar"
+          />
+          <div className="sidebar__links">
+            <SocialLinks />
+            <div className="sidebar__collapse-wrapper">
+              <AppIconWrapper
+                Icon={SvgChevron}
+                size={38}
+                iconSize={36}
+                className={`sidebar__collapse ${
+                  collapseSidebar ? "sidebar__collapse--active" : ""
+                }`}
+                onClick={toggleSidebar}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className="sidebar-overlay" onClick={toggleSidebar} />
+    </>
   );
 };
