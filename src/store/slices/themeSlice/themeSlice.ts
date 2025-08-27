@@ -25,7 +25,9 @@ const themeSlice = createSlice({
       localStorage.setItem("theme", action.payload);
       document.documentElement.setAttribute("data-theme", action.payload);
 
-      const palette = action.payload === "dark" ? lightModeThemePalette : darkModeThemePalette;
+      const palette = action.payload === "dark"
+        ? darkModeThemePalette
+        : lightModeThemePalette;
       applyTheme(palette);
     },
     toggleTheme: (state) => {
@@ -34,7 +36,9 @@ const themeSlice = createSlice({
       localStorage.setItem("theme", newTheme);
       document.documentElement.setAttribute("data-theme", newTheme);
 
-      const palette = newTheme === "dark" ? darkModeThemePalette : lightModeThemePalette;
+      const palette = newTheme === "dark"
+        ? darkModeThemePalette
+        : lightModeThemePalette;
       applyTheme(palette);
     },
   },
