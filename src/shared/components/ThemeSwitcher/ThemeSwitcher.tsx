@@ -7,7 +7,7 @@ import "./ThemeSwitcher.scss";
 
 export const ThemeSwitcher: React.FC = () => {
   const { mode, toggle } = useTheme();
-  const isLight = mode === "light";
+  const isLight = mode === "dark";
 
   return (
     <label className="theme-switcher">
