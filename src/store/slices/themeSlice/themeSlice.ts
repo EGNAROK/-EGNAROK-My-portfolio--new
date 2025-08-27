@@ -9,7 +9,9 @@ interface ThemeState {
 }
 
 const getInitialTheme = (): Theme => {
-  return (localStorage.getItem("theme") as Theme) || "dark";
+  const stored = localStorage.getItem("theme") as Theme | null;
+  if (stored === "light" || stored === "dark") return stored;
+  return "dark";
 };
 
 const initialState: ThemeState = {

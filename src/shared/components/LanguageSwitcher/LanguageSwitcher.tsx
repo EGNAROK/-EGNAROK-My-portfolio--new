@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { TRANSLATION } from "../../constants";
 import { useLanguage } from "../../hooks";
-import "./LanguageSwitcher.scss";
 import { AppButton } from "../AppButton/AppButton";
+import "./LanguageSwitcher.scss";
 
 export const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ export const LanguageSwitcher: React.FC = () => {
 
   const currentLangLabel =
     Object.values(TRANSLATION.LANGUAGES).find((lang) => lang.KEY === language)
-      ?.KEY ?? language;
+      ?.LABEL ?? language;
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
