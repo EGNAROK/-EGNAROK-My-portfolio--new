@@ -9,7 +9,7 @@ interface ThemeState {
 }
 
 const getInitialTheme = (): Theme => {
-  return (localStorage.getItem("theme") as Theme) || "dark";
+   return "dark";
 };
 
 const initialState: ThemeState = {
@@ -25,20 +25,16 @@ const themeSlice = createSlice({
       localStorage.setItem("theme", action.payload);
       document.documentElement.setAttribute("data-theme", action.payload);
 
-      const palette = action.payload === "dark"
-        ? darkModeThemePalette
-        : lightModeThemePalette;
+      const palette = action.payload === "light" ? lightModeThemePalette : darkModeThemePalette;
       applyTheme(palette);
     },
     toggleTheme: (state) => {
-      const newTheme = state.mode === "dark" ? "light" : "dark";
+      const newTheme = state.mode === "light" ? "dark" : "light";
       state.mode = newTheme;
       localStorage.setItem("theme", newTheme);
       document.documentElement.setAttribute("data-theme", newTheme);
 
-      const palette = newTheme === "dark"
-        ? darkModeThemePalette
-        : lightModeThemePalette;
+      const palette = newTheme === "light" ? lightModeThemePalette : darkModeThemePalette;
       applyTheme(palette);
     },
   },
