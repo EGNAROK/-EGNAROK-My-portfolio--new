@@ -2,7 +2,6 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import i18n from "../../../i18n";
 
 type Language = "en" | "uk";
-let t = "text";
 
 const getInitialLanguage = (): Language => {
   return (localStorage.getItem("language") as Language) || "en";
