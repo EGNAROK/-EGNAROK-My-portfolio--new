@@ -4,9 +4,7 @@ import i18n from "../../../i18n";
 type Language = "en" | "uk";
 
 const getInitialLanguage = (): Language => {
-  return (localStorage.getItem("language") as Language) 
-    || (i18n.language as Language) 
-    || "en";
+  return (localStorage.getItem("language") as Language) || "uk";
 };
 
 const initialState = {
