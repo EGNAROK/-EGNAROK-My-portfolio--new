@@ -49,8 +49,9 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 260px;
     height: 340px;
+    border-radius: 16px;
 
     &::before {
       content: "";
@@ -74,7 +75,7 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
     }
 
     @include r.responsive-multiple(phone, phone-large) {
-      width: 200px;
+      width: 190px;
       height: 240px;
     }
   }
@@ -86,7 +87,7 @@ $about-me-text-box-shadow-base-color: var(--shadows-base);
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    object-fit: cover;
+    object-fit: fill;
   }
 
   &__text-wrapper {

@@ -11,7 +11,7 @@ export const socialLinksData = [
   {
     img: SvgFacebookIcon,
     alt: "Facebook",
-    link: ""
+    link: "https://www.facebook.com/profile.php?id=100077209404450"
   },
   {
     img: SvgGithubIcon,
