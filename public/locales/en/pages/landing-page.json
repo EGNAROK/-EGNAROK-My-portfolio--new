@@ -82,6 +82,10 @@
         "project5": {
             "title": "To-Do List",
             "description": "This is my new small project created to practice working with React, React hooks, and props. The app allows users to add, complete, and delete tasks in a simple and intuitive interface. For handling sound effects on user actions, I used the `use-sound` library. The design is custom-made by me, featuring a warm, watercolor-inspired style that adds a gentle and friendly feel. This project helped me improve my skills in React state management, component composition, and working with third-party libraries."
+        },
+        "project6": {
+            "title": "Cozy Mug",
+            "description": "In progres ..."
         }
     }
 }

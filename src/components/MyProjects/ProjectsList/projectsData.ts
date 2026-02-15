@@ -10,6 +10,13 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
+    id: 6,
+    title: 'projects.project6.title',
+    description: 'projects.project6.description',
+    image: projects.cozyMug,
+    link: 'https://cozy-mug.vercel.app/'
+  },
+  {
     id: 5,
     title: 'projects.project5.title',
     description: 'projects.project5.description',
