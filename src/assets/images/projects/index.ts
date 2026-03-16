@@ -3,6 +3,7 @@ import foodtuck from './FoodTuck.png';
 import languageSpace from './Language-space.png';
 import pokedex from './Pokedex.png';
 import todoList from './To-Do-app.png';
+import GoodGameBand from './GoodGameBand.png';
 import cozyMug from './CozyMug.png';
 
 export {
@@ -11,5 +12,6 @@ export {
     languageSpace,
     pokedex,
     todoList,
+    GoodGameBand,
     cozyMug
 }
