@@ -19,7 +19,7 @@ export const CV: React.FC = () => {
         </AppButton>
       </div>
       <a
-        href="https://drive.google.com/file/d/1osi9EcIPA_fqG_YNOd1kis-deviNVh2H/view?usp=sharing"
+        href="https://drive.google.com/file/d/1ATWd2XfKRQ99CaYS74e9l6HexBOFTKii/view?usp=sharing"
         className={`cv__item ${isOpen ? "cv__item--open" : ""}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -27,7 +27,7 @@ export const CV: React.FC = () => {
         <img src={icons.Ukraine} alt="Ukraine" className="cv__icon" />
       </a>
       <a
-        href="https://drive.google.com/file/d/10X5cQvApf9jN9hEV_3x-DX63efxJrV6V/view?usp=sharing"
+        href="https://drive.google.com/file/d/1xN_pZ3OKQ818w9_3rtBLstfLESiuRm7G/view?usp=sharing"
         className={`cv__item ${isOpen ? "cv__item--open" : ""}`}
         target="_blank"
         rel="noopener noreferrer"
