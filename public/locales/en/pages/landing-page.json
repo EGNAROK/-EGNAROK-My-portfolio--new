@@ -88,6 +88,10 @@
       "description": "A small landing page created as a practical project based on a test assignment. Implemented using pure HTML, CSS, and JavaScript without frameworks. The design, images, and texts were adapted and modified by me compared to the original source."
     },
     "project7": {
+      "title": "Dr. Androsova",
+      "description": "A commercial landing page, developed in pair with a senior developer. Built using React, TypeScript, and SCSS. Vite was used for project setup and build optimization. Contributed to creating a responsive interface and reusable UI components."
+    },
+    "project8": {
       "title": "Cozy Mug",
       "description": "In progress ..."
     }

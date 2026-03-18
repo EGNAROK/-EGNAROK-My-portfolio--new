@@ -4,6 +4,7 @@ import languageSpace from './Language-space.png';
 import pokedex from './Pokedex.png';
 import todoList from './To-Do-app.png';
 import GoodGameBand from './GoodGameBand.png';
+import DrAndrosova from './dr-Androsova.png';
 import cozyMug from './CozyMug.png';
 
 export {
@@ -13,5 +14,6 @@ export {
     pokedex,
     todoList,
     GoodGameBand,
+    DrAndrosova,
     cozyMug
 }
