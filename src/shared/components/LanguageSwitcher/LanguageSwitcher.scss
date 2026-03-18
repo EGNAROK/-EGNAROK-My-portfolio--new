@@ -54,6 +54,7 @@ $language-switcher-text-primary-color: var(--text-primary);
     position: absolute;
     top: 125%;
     right: 0px;
+    width: 160px;
     background-color: $language-switcher-background-surface-color;
     box-shadow: inset 0 0 3px 1px $language-switcher-box-shadow-base-color;
     border-radius: 16px;
